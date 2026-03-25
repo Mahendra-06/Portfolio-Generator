@@ -1,0 +1,59 @@
+<section class="portfolio-shell t1-split">
+  <style>
+    .t1-split{max-width:1180px;padding:.85rem;background:#1f1f22;border-radius:14px;border:1px solid #3b3b40}
+    .t1-surface{background:#111;border-radius:12px;overflow:hidden}
+    .t1-top{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:530px}
+    .t1-left{background:#d8d8d8;clip-path:polygon(0 0,100% 0,82% 100%,0 100%);padding:1.5rem 5.6rem 2rem 2rem;display:flex;flex-direction:column;justify-content:space-between}
+    .t1-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .t1-mark{font-weight:900;font-size:1.18rem;letter-spacing:.08em;color:#111}
+    .t1-links{display:flex;gap:1.15rem}
+    .t1-links a{color:#111;font-size:.83rem;font-weight:700}
+    .t1-cta{padding:.45rem .9rem;border-radius:999px;background:#f0f0f0;color:#0f0f0f;font-size:.77rem;font-weight:800}
+    .t1-intro{padding-top:1.2rem;max-width:min(560px,78%)}
+    .t1-intro p{margin:0}
+    .t1-hi{font-size:2.15rem;font-weight:700;color:#111}
+    .t1-name{margin:.42rem 0 0;font-size:clamp(2.2rem,5vw,4rem);line-height:1.03;color:#111;max-width:100%;overflow-wrap:anywhere}
+    .t1-role{margin:.35rem 0 0;color:#707070;font-weight:800;font-size:1.06rem}
+    .t1-bio{margin:.7rem 0 0;max-width:100%;color:#585858;line-height:1.7;font-size:.95rem}
+    .t1-social{margin-top:1.15rem;display:flex;gap:.55rem;flex-wrap:wrap}
+    .t1-social a{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:42px;padding:0 .68rem;border-radius:6px;background:#efefef;border:1px solid #cfcfcf;color:#111;font-size:.77rem;font-weight:800}
+    .t1-photo{position:relative;background:#050505}
+    .t1-photo img{position:absolute;right:0;bottom:0;width:min(95%,540px);height:100%;object-fit:contain}
+    .t1-body{padding:.8rem;background:#f6f8fc}
+    @media(max-width:960px){.t1-top{grid-template-columns:1fr}.t1-left{clip-path:none}.t1-nav{flex-wrap:wrap}.t1-links{order:2;width:100%;overflow:auto}.t1-photo{min-height:350px}.t1-photo img{position:static;width:100%;height:100%;object-fit:cover}}
+  </style>
+  <div class="t1-surface">
+    <section id="about" class="t1-top">
+      <div class="t1-left">
+        <header class="t1-nav">
+          <a class="t1-mark" href="#about">TG</a>
+          <nav class="t1-links">
+            <a href="#about">About me</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Portfolio</a>
+          </nav>
+          <a class="t1-cta" href="#contact">Contact Me</a>
+        </header>
+        <div class="t1-intro">
+          <p class="t1-hi">Hi, I am</p>
+          <h1 class="t1-name">{{name}}</h1>
+          <p class="t1-role">Front-end Developer / UI Designer</p>
+          <p class="t1-bio">{{bio}}</p>
+          <div class="t1-social">{{socialLinks}}</div>
+        </div>
+      </div>
+      <aside class="t1-photo"><img src="{{profileImage}}" alt="Profile photo" /></aside>
+    </section>
+    <div class="t1-body">
+      <section id="skills" class="content-block reveal"><h2>Skills</h2><ul class="skill-list">{{skills}}</ul></section>
+      <section id="experience" class="content-block reveal"><h2>Experience</h2><div class="experience-wrap">{{experience}}</div></section>
+      <section id="projects" class="content-block reveal"><h2>Projects</h2><div class="projects-wrap">{{projects}}</div></section>
+      <section id="contact" class="content-block reveal"><h2>Contact</h2><p class="contact-lines">{{contact}}</p></section>
+    </div>
+  </div>
+</section>
+
+
+
+
+

@@ -1,0 +1,46 @@
+<section class="portfolio-shell t3">
+  <header class="site-header">
+    <a class="logo-mark" href="#">{{name}}</a>
+    <nav class="site-nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-cta" href="#contact">Contact</a>
+  </header>
+
+  <section id="about" class="content-block reveal" style="display:grid;grid-template-columns:1.1fr 300px;gap:0.85rem;align-items:center;">
+    <div>
+      <p class="kicker">Product-Focused Developer</p>
+      <h1>{{name}}</h1>
+      <p class="hero-bio">{{bio}}</p>
+      <div class="social-links" style="margin-top:0.7rem;">{{socialLinks}}</div>
+    </div>
+    <div class="portrait-panel" style="min-height:260px;">
+      <img src="{{profileImage}}" alt="Profile photo" />
+    </div>
+  </section>
+
+  <section id="skills" class="content-block reveal">
+    <h2>Tech Stack</h2>
+    <div class="chips">{{skills}}</div>
+  </section>
+
+  <section id="experience" class="content-block reveal">
+    <h2>Experience</h2>
+    <div class="experience-wrap">{{experience}}</div>
+  </section>
+
+  <section id="projects" class="content-block reveal">
+    <h2>Project Library</h2>
+    <div class="projects-wrap">{{projects}}</div>
+  </section>
+
+  <section id="contact" class="content-block reveal">
+    <h2>Contact</h2>
+    <p class="contact-lines">{{contact}}</p>
+  </section>
+</section>
+

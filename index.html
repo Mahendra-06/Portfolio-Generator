@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <div class="hero__top">
+        <div>
+          <p class="eyebrow">Portfolio Generator</p>
+          <h1>Build a portfolio in seconds</h1>
+          <p>Fill the form, pick a template, generate a live preview, then export as HTML.</p>
+        </div>
+        <div class="hero-quick-actions">
+          <button type="button" id="importBtn" class="btn">Import Portfolio HTML</button>
+          <input id="importInput" type="file" accept=".html,.htm,text/html" hidden />
+          <button type="button" id="demoBtn" class="btn">Load Demo Data</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel">
+      <h2>Your Details</h2>
+      <form id="portfolioForm" autocomplete="off">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" maxlength="60" placeholder="Alex Morgan" required />
+        <p id="nameError" class="field-error" aria-live="polite"></p>
+
+        <label for="bio">Bio</label>
+        <textarea id="bio" name="bio" rows="3" maxlength="220" placeholder="Frontend developer who loves clean UI and fast UX." required></textarea>
+        <p id="bioHint" class="char-hint">0/220</p>
+        <p id="bioError" class="field-error" aria-live="polite"></p>
+
+        <label for="skills">Skills (comma-separated)</label>
+        <textarea id="skills" name="skills" rows="2" maxlength="220" placeholder="HTML, CSS, JavaScript, React" required></textarea>
+        <p id="skillsHint" class="char-hint">0/220</p>
+        <p id="skillsError" class="field-error" aria-live="polite"></p>
+
+        <label>Projects</label>
+        <div id="projectsContainer" class="projects-container"></div>
+        <button type="button" id="addProjectBtn" class="btn btn-subtle">+ Add Project</button>
+        <p id="projectsError" class="field-error" aria-live="polite"></p>
+
+        <label>Experience</label>
+        <div id="experienceContainer" class="projects-container"></div>
+        <button type="button" id="addExperienceBtn" class="btn btn-subtle">+ Add Experience</button>
+        <p id="experienceError" class="field-error" aria-live="polite"></p>
+
+        <label for="github">GitHub URL</label>
+        <input id="github" name="github" type="url" placeholder="https://github.com/yourusername" />
+        <p id="githubError" class="field-error" aria-live="polite"></p>
+
+        <label for="linkedin">LinkedIn URL</label>
+        <input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/yourname" />
+        <p id="linkedinError" class="field-error" aria-live="polite"></p>
+
+        <label for="contact">Contact Info</label>
+        <textarea id="contact" name="contact" rows="3" maxlength="220" placeholder="Email: alex@email.com&#10;Phone: +1 555-1234&#10;Location: New York"></textarea>
+        <p id="contactHint" class="char-hint">0/220</p>
+
+        <label for="profileImage">Profile Image (optional)</label>
+        <input id="profileImage" name="profileImage" type="file" accept="image/*" />
+        <button type="button" id="removeImageBtn" class="btn btn-subtle">Remove uploaded image</button>
+        <img id="profilePreview" class="profile-preview" alt="Selected profile preview" hidden />
+
+        <h3>Choose Template</h3>
+        <div class="template-picker" role="radiogroup" aria-label="Template selection">
+          <label class="template-option">
+            <input type="radio" name="template" value="1" checked />
+            <span>
+              <strong>Template 1</strong>
+              <small>Card Showcase</small>
+            </span>
+            <div class="template-thumb thumb-3" aria-hidden="true"></div>
+          </label>
+          <label class="template-option">
+            <input type="radio" name="template" value="2" />
+            <span>
+              <strong>Template 2</strong>
+              <small>Dark Premium</small>
+            </span>
+            <div class="template-thumb thumb-2" aria-hidden="true"></div>
+          </label>
+          <label class="template-option">
+            <input type="radio" name="template" value="3" />
+            <span>
+              <strong>Template 3</strong>
+              <small>Clean Professional</small>
+            </span>
+            <div class="template-thumb thumb-1" aria-hidden="true"></div>
+          </label>
+          <label class="template-option">
+            <input type="radio" name="template" value="4" />
+            <span>
+              <strong>Template 4</strong>
+              <small>Neon Studio</small>
+            </span>
+            <div class="template-thumb thumb-4" aria-hidden="true"></div>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Generate</button>
+          <button type="button" id="downloadBtn" class="btn">Download HTML</button>
+          <button type="button" id="copyBtn" class="btn">Copy Code</button>
+          <button type="button" id="resetBtn" class="btn btn-danger">Reset All</button>
+        </div>
+        <p id="status" class="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel preview-panel">
+      <div class="preview-head">
+        <h2>Live Preview</h2>
+        <span>Updates instantly</span>
+      </div>
+      <iframe id="previewFrame" title="Portfolio preview"></iframe>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

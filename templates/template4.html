@@ -1,0 +1,68 @@
+<section class="portfolio-shell t4-neon">
+  <style>
+    .t4-neon{max-width:1160px;background:
+      radial-gradient(circle at 20% -10%, rgba(196,62,255,.34), transparent 36%),
+      radial-gradient(circle at 85% 4%, rgba(66,129,255,.28), transparent 30%),
+      #070a13;border:1px solid rgba(103,113,255,.36);box-shadow:0 0 0 1px rgba(163,95,255,.18),0 26px 55px rgba(6,10,20,.66);padding:1.2rem}
+    .t4-neon .n-wrap{border-radius:18px;border:1px solid rgba(144,157,255,.23);background:linear-gradient(160deg,rgba(7,9,16,.94),rgba(10,15,30,.96));padding:1.05rem}
+    .t4-neon .n-nav{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.45rem .6rem;border-radius:999px;border:1px solid rgba(131,147,255,.23);background:rgba(6,9,16,.8)}
+    .t4-neon .n-logo{font-weight:800;color:#f4f7ff}
+    .t4-neon .n-menu{display:flex;gap:.9rem}
+    .t4-neon .n-menu a{color:#aeb7cc;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    .t4-neon .n-arrow{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(152,166,255,.35);color:#dfe5ff}
+    .t4-neon .n-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem;align-items:end;padding:1.15rem .45rem .5rem}
+    .t4-neon .n-kicker{margin:0;color:#aeb6c8;font-weight:700;font-size:.71rem;letter-spacing:.12em;text-transform:uppercase}
+    .t4-neon .n-title{margin:.4rem 0 0;font-size:clamp(2.2rem,5.2vw,4.2rem);line-height:1;color:#f5f7ff;display:flex;align-items:flex-start;gap:.2rem}
+    .t4-neon .n-title i{font-style:normal;color:#ff6e46;font-size:.76em;line-height:.9}
+    .t4-neon .n-bio{margin:.7rem 0 0;max-width:560px;color:#9aa7bf;line-height:1.7}
+    .t4-neon .n-actions{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:.95rem}
+    .t4-neon .n-btn{display:inline-flex;align-items:center;justify-content:center;padding:.54rem .9rem;border-radius:999px;border:1px solid rgba(140,155,255,.35);font-size:.78rem;font-weight:700}
+    .t4-neon .n-btn--solid{background:linear-gradient(130deg,#ff6d56,#ff9158);border-color:transparent;color:#fff}
+    .t4-neon .n-btn--ghost{background:rgba(10,15,30,.72);color:#e6edff}
+    .t4-neon .n-photo{min-height:430px;border-radius:16px;overflow:hidden;border:1px solid rgba(123,139,255,.27);background:#0b1020}
+    .t4-neon .n-photo img{width:100%;height:100%;object-fit:cover;display:block}   .t4-neon .n-sections{display:grid;grid-template-columns:1fr;gap:.7rem;margin:.95rem .45rem .2rem}
+    .t4-neon .n-card{border-radius:14px;border:1px solid rgba(139,155,255,.23);background:rgba(13,19,38,.8);padding:.9rem}
+    .t4-neon .n-card h2{color:#f2f5ff;font-size:1.02rem;margin:0 0 .55rem}
+    .t4-neon .chips .chip{background:rgba(83,113,255,.18);border-color:rgba(130,153,255,.36);color:#dce6ff}
+    .t4-neon .contact-lines{color:#c7d2ea}
+    .t4-neon .contact-link{color:#8db2ff}
+    .t4-neon .social-link{background:rgba(89,116,255,.2);border-color:rgba(138,160,255,.4);color:#dfe9ff}
+    .t4-neon .social-empty{color:#93a1bd}
+    @media(max-width:920px){.t4-neon .n-menu{display:none}.t4-neon .n-hero{grid-template-columns:1fr}.t4-neon .n-photo{min-height:300px}}
+  </style>
+  <div class="n-wrap">
+    <header class="n-nav">
+      <a class="n-logo" href="#about">{{name}}</a>
+      <nav class="n-menu">
+        <a href="#projects">Work</a>
+        <a href="#about">About</a>
+        <a href="#experience">Ventures</a>
+        <a href="#skills">Articles</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="n-arrow" href="#contact" aria-label="Go to contact">&rarr;</a>
+    </header>
+
+    <section id="about" class="n-hero">
+      <div>
+        <p class="n-kicker">Seasoned Product Designer</p>
+        <h1 class="n-title">{{name}}<i>+</i></h1>
+        <p class="n-bio">{{bio}}</p>
+        <div class="social-links" style="margin-top:.75rem">{{socialLinks}}</div>
+        <div class="n-actions">
+          <a class="n-btn n-btn--solid" href="#projects">Get the portfolio</a>
+          <a class="n-btn n-btn--ghost" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <aside class="n-photo"><img src="{{profileImage}}" alt="Profile photo" /></aside>
+    </section>
+    <section class="n-sections">
+      <article id="skills" class="n-card"><h2>Skills</h2><div class="chips">{{skills}}</div></article>
+      <article id="projects" class="n-card"><h2>Work</h2><div class="projects-wrap">{{projects}}</div></article>
+      <article id="experience" class="n-card"><h2>Experience</h2><div class="experience-wrap">{{experience}}</div></article>
+      <article id="contact" class="n-card"><h2>Contact</h2><p class="contact-lines">{{contact}}</p></article>
+    </section>
+  </div>
+</section>
+
+
